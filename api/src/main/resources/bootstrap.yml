@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: api
+  cloud:
+    config:
+      uri: http://192.168.10.115:7001/
+      label: master
+      profile: dev
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.10.115:1111/eureka/

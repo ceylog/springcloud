@@ -17,6 +17,11 @@ spring:
                     #username: username
                     #password: password
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.10.115:1111/eureka/
+
 
 
     
