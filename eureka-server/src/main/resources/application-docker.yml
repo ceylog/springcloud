@@ -5,7 +5,7 @@ spring:
     name: @project.artifactId@
 eureka:
   instance:
-    hostname: 192.168.10.115
+    hostname: localhost
   server:
     enableSelfPreservation: false
   client:
