@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: @project.artifactId@
-  profiles:
-    active: @activatedProperties@
 eureka:
   instance:
     hostname: 192.168.10.115

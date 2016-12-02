@@ -6,9 +6,7 @@ spring:
     #profile:
         #active: native
     application:
-      name: @project.artifactId@
-    profiles:
-      active: @activatedProperties@
+        name: @project.artifactId@
     # git管理配置
     cloud:
         config:
@@ -22,7 +20,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://eureka-server:1111/eureka/
 
 
 

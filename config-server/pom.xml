@@ -22,6 +22,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<docker.image.prefix>orgwg</docker.image.prefix>
+		<!-- 激活的profile -->
+		<activatedProperties></activatedProperties>
 	</properties>
 
     <dependencies>
@@ -54,7 +56,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.RELEASE</version>
+                <version>Camden.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -76,7 +78,7 @@
 				<executions>
 					<execution>
 						<id>biild-docker-image</id>
-						<phase>package</phase>
+						<phase>install</phase>
 						<goals>
 							<goal>build</goal>
 						</goals>
@@ -96,6 +98,15 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>docker</id>
+			<properties>
+				<activatedProperties>docker</activatedProperties>
+			</properties>
+		</profile>
+	</profiles>
 
     <repositories>  
 		<repository>

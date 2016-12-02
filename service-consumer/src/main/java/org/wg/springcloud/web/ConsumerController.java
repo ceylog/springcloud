@@ -17,9 +17,16 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private AddService addService;
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
-        return restTemplate.getForEntity("http://API/add?a=10&b=20", String.class).getBody();
+        return restTemplate.getForEntity("http://API-SERVICE/add?a=10&b=20", String.class).getBody();
+    }
+    @RequestMapping(value = "/add1", method = RequestMethod.GET)
+    public String add1(){
+        return addService.add(1,2);
     }
 
 }
